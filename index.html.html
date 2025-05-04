@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calvary Touch of God Church Volunteer Participation Form</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Add Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <img src="images/logo.png" alt="Volunteer Tracker Logo" class="logo">
+      <h1>Calvary Touch of God Church Volunteer Participation Form</h1>
+             <em> Thank you to all our amazing volunteers!<em> 
+   </div>
+  </header>
+  
+  <main class="container">
+    <section class="form-section">
+      <h2><i class="fas fa-user-plus"></i> Record New Volunteer</h2>
+      <div class="form-group">
+        <label for="eventDate">Service Date</label>
+        <input type="date" id="eventDate" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="volunteerName">Full Name</label>
+        <input type="text" id="volunteerName" placeholder="Enter volunteer's full name" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="contactInfo">Contact Information</label>
+        <input type="text" id="contactInfo" placeholder="Email or phone number">
+      </div>
+      
+      <div class="form-group">
+        <label for="hoursServed">Hours Served</label>
+        <input type="number" id="hoursServed" min="0.5" step="0.5" value="1">
+      </div>
+      
+      <div class="form-group">
+        <label for="serviceType">Type of Service</label>
+        <select id="serviceType">
+         <option value="logistics">Logistics and Transportation</option>
+            <option value="packaging">Food Packaging</option>
+            <option value="registrar">Data Entry and Collection</option>
+            <option value="runner">Runner</option>
+            <option value="other">Other</option>
+        </select>
+      </div>
+      
+      <button onclick="addVolunteer()">
+        <i class="fas fa-save"></i> Record Participation
+      </button>
+    </section>
+    
+    <section class="volunteers-section">
+      <h2><i class="fas fa-users"></i> Today's Volunteers</h2>
+      <table id="volunteerTable">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Contact</th>
+            <th>Hours</th>
+            <th>Service Type</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Volunteer entries will appear here -->
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-database-compat.js"></script>
+  <script src="script.js"></script>
+
+   <button onclick="generateReport()">Generate Report</button>
+</body>
+<footer>
+  <p>© 2025 Volunteer Tracker | <a href="#">Privacy Policy</a></p>
+</footer>
+</html>
